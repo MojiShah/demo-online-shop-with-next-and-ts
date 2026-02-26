@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/Layout";
 import { ShoppingCartContextProvider } from "@/context/ShoppingCartContext";
+import { Vazirmatn } from "next/font/google";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["latin", "arabic"],
+  variable: "--font-vazirmatn",
+});
 
 
 export const metadata: Metadata = {
@@ -16,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className={`${vazirmatn.className}`}>
         <ShoppingCartContextProvider>
           <Layout>{children}</Layout>
         </ShoppingCartContextProvider>

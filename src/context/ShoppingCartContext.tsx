@@ -9,6 +9,7 @@ type TShoppingCartContext = {
   handleIncreaseProductQty: (id: number) => void;
   handleDecreaseProductQty: (id: number) => void;
   getProductQty: (id: number) => number;
+  handleRemoveProduct : (id:number) =>void;
   cartTotalQty: number;
 };
 
@@ -68,6 +69,8 @@ const ShoppingCartContextProvider = ({
     });
   };
 
+  const handleRemoveProduct = (id:number) => setCartItems(currentIems => currentIems.filter(item => item.id != id));
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -76,6 +79,7 @@ const ShoppingCartContextProvider = ({
         handleDecreaseProductQty,
         getProductQty,
         cartTotalQty,
+        handleRemoveProduct
       }}
     >
       {children}
