@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/Layout";
-import { ShoppingCartContextProvider } from "@/context/shoppingCartContext";
+import { ShoppingCartContextProvider } from "@/context/ShoppingCartContext";
 
 
 export const metadata: Metadata = {
