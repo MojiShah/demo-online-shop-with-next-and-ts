@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 //Types
 type TShoppingCartContextProviderProps = { children: React.ReactNode };
@@ -23,8 +23,18 @@ const ShoppingCartContextProvider = ({
 }: TShoppingCartContextProviderProps) => {
   const [cartItems, setCartItems] = useState<TCartItems[]>([]);
 
-  const getProductQty = (id: number) =>
-    cartItems.find((item) => item.id == id)?.qty || 0;
+  // In reactjs we use from useLocalStorage Custom hook. Because of server side rendering for
+  // both of server and even client components we cant use from it in Next js.
+
+  useEffect(()=>{
+    const storedCartItems = localStorage.getItem("cartItems");
+    if(storedCartItems) setCartItems(JSON.parse(storedCartItems));
+  },[])
+  
+  useEffect(()=>{localStorage.setItem("cartItems",JSON.stringify(cartItems))},[cartItems])
+
+
+  const getProductQty = (id: number) => cartItems.find((item) => item.id == id)?.qty || 0;
 
   const cartTotalQty = cartItems.reduce(
     (totalQty, item) => totalQty + item.qty,
