@@ -1,13 +1,8 @@
+import { IProductItemProps } from "@/utils/Types";
 import Image from "next/image";
 import React from "react";
 
-export interface IProductItemProps {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  desc: string;
-}
+
 
 const ProductItem = ({id,name,price,image,desc}:IProductItemProps) => {
   return (

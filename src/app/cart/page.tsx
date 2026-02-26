@@ -1,10 +1,9 @@
 "use client";
 import CartItem from "@/components/CartItem";
 import Container from "@/components/Container";
-import { IProductItemProps } from "@/components/ProductItem";
 import { useShoppingCartContext } from "@/context/ShoppingCartContext";
 import { formatNumberWithCommas } from "@/utils/number";
-import { TDiscount } from "@/utils/Types";
+import { IProductItemProps, TDiscount } from "@/utils/Types";
 import React, { useEffect, useState } from "react";
 
 const cart = () => {

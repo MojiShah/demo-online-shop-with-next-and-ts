@@ -1,6 +1,6 @@
 import AddToCart from "@/components/AddToCart";
-import { IProductItemProps } from "@/components/ProductItem";
 import { formatNumberWithCommas } from "@/utils/number";
+import { IProductItemProps } from "@/utils/Types";
 import Image from "next/image";
 
 
