@@ -1,11 +1,38 @@
-import React from 'react'
+'use client'
+import CartItem from "@/components/CartItem";
+import Container from "@/components/Container";
+import { useShoppingCartContext } from "@/context/ShoppingCartContext";
+import React from "react";
 
 const cart = () => {
+  const {cartItems} = useShoppingCartContext()
   return (
-    <div>
-      <h1>Cart</h1>
-    </div>
-  )
-}
+    <Container>
+      <h1>سبد خرید</h1>
+      <div className="">
+        {cartItems.map(item=><CartItem key={item.id} {...item}/>)}
+      </div>
 
-export default cart
+      <div className="border shadow-md text-right p-4">
+        <h3 className="rtl">
+          قیمت کل: <span>100$</span>
+        </h3>
+
+        <h3 className="rtl">
+          سود شما از این خرید: <span>5$</span>
+        </h3>
+
+        <h3 className="rtl">
+          قیمت نهایی: <span>69$</span>
+        </h3>
+
+        <div className="flex flex-col">
+          <button className="bg-sky-600 text-white px-4 py-1 rounded mb-2"> اعمال تغییرات</button>
+          <input type="text" placeholder="کد تخفیف خود را وارد کنید." className="rtl text-right border px-2 py-0.5" />
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export default cart;
