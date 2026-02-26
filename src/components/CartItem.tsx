@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { IProductItemProps } from "./ProductItem";
 import { useShoppingCartContext } from "@/context/ShoppingCartContext";
+import { formatNumberWithCommas } from "@/utils/number";
 
 interface ICartItemProps {
   id: number;
@@ -22,7 +23,7 @@ const CartItem = ({ id, qty }: ICartItemProps) => {
       .then((data) => setBasket(data))
       .catch((err) => console.error(err));
   }, []);
-  
+
   return (
     <div className="grid grid-cols-12 bg-slate-100 mb-4 p-4">
         <img 

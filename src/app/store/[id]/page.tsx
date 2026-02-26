@@ -1,5 +1,6 @@
 import AddToCart from "@/components/AddToCart";
 import { IProductItemProps } from "@/components/ProductItem";
+import { formatNumberWithCommas } from "@/utils/number";
 import Image from "next/image";
 
 
@@ -39,7 +40,7 @@ const productDetail = async ({params}:IProductDetailProps) => {
 
         <p className="text-left">
           {" "}
-          <span>{data.price} </span>تومان
+          <span>{formatNumberWithCommas(data.price)} </span>تومان
         </p>
 
         <AddToCart id={id}/>

@@ -13,7 +13,7 @@ const Navbar = () => {
     { href: "/store", title: "فروشگاه  " },
   ];
   return (
-    <nav className="shadow p-4">
+    <nav className="shadow p-4 w-full sticky">
       <Container>
         <div className="flex justify-between items-center">
           <div>
