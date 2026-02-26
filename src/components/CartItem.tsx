@@ -19,14 +19,10 @@ const CartItem = ({ id, qty }: ICartItemProps) => {
   useEffect(() => {
     fetch(`http://localhost:3001/allProducts/${id}`)
       .then((res) => res.json())
-      .then((data) => {
-        console.log("data=> ", data);
-        setBasket(data);
-      })
+      .then((data) => setBasket(data))
       .catch((err) => console.error(err));
-
-    console.log("basket=> ", basket);
   }, []);
+  
   return (
     <div className="grid grid-cols-12 bg-slate-100 mb-4 p-4">
         <img 

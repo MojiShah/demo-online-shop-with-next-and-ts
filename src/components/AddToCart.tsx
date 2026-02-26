@@ -14,7 +14,7 @@ const AddToCart = ({ id }: IAddToCartProps) => {
     handleDecreaseProductQty,
     handleRemoveProduct,
   } = useShoppingCartContext();
-  console.log("cartItems => ", cartItems);
+ 
 
   return (
     <div className="flex flex-col">

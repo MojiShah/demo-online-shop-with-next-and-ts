@@ -13,7 +13,7 @@ const productDetail = async ({params}:IProductDetailProps) => {
 
   const res = await fetch(`http://localhost:3001/allProducts/${id}`);
   const data = (await res.json()) as IProductItemProps;
-  console.log(data)
+  
   return (
     <div className="grid grid-cols-12 m-8 p-7 shadow-2xl rounded-2xl border-t-[.5px]">
 
