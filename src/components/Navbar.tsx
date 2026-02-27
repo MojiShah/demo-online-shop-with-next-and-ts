@@ -11,6 +11,8 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", title: " خانه " },
     { href: "/store", title: "فروشگاه  " },
+    { href: "/admin", title: "پنل مدیریت  " },
+    { href: "/about", title: "درباره ما" },
   ];
   return (
     <nav className="shadow p-4 w-full sticky">
